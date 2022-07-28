@@ -1,0 +1,8 @@
+.footer-wrapper{
+    font-size: 9px;
+    font-family: 'Noto Sans KR Light', sans-serif;
+    border-top: 1px solid #ebebeb;
+}
+.footer-wrapper strong{
+    letter-spacing: -1px;
+}

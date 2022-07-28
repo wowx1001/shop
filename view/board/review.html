@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0b71acbec7.js" crossorigin="anonymous"></script>
+    <script src="/src/js/App.js" type="module"></script>
+    <script src="/src/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/src/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/review.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>리뷰게시판</title>
+</head>
+<body>
+    <div class="body-container" id="app">
+        <header id="header" style="letter-spacing: -1px;font-family: 'Noto Sans KR Light', sans-serif; text-decoration: none; color: black;">
+            <!-- header 컴포넌트 로딩 -->
+        </header>
+        <aside class="accordion-menu close-accordion">
+            <div class="close"></div>
+            <div style="padding-left: 12px;">
+                <a href="/view/member/login.html">로그인이 필요합니다</a>
+            </div>
+            <div>
+                <ul style="padding: 0;text-align: center; margin: 19px 0;">
+                    <li class="clearfix" style="line-height: 32px;width:24%; display: inline-block;"><a href="/view/member/join.html"><div><img src="/src/media/images/cart.png" style="margin:auto;width: 30px;"/><p style="font-size: 12px; margin:0;">회원가입</p></div></a></li>
+                    <li class="clearfix" style="line-height: 32px;width:24%; display: inline-block;"><a href="#"><div><img src="/src/media/images/cart.png" style="margin:auto;width: 30px;"/><p style="font-size: 12px; margin:0;">장바구니</p></div></a></li>
+                    <li class="clearfix" style="line-height: 32px;width:24%; display: inline-block;"><a href="#"><div><img src="/src/media/images/cart.png" style="margin:auto;width: 30px;"/><p style="font-size: 12px; margin:0;">주문조회</p></div></a></li>
+                    <li class="clearfix" style="line-height: 32px;width:24%; display: inline-block;"><a href="#"><div><img src="/src/media/images/cart.png" style="margin:auto;width: 30px;"/><p style="font-size: 12px; margin:0;">배송조회</p></div></a></li>
+                </ul>
+            </div>
+            <div>
+                <div>
+                    <ul class="first-depth-ul">
+                        <li><a href="/view/member/join.html" class="first-depth-records">마이페이지</a><a class="b-arrow-box"></a></li>
+                        <li><a href="/view/board/notify.html" class="first-depth-records">공지사항</a><a class="b-arrow-box"></a></li>
+                        <li><a href="/view/board/review.html" class="first-depth-records">리뷰게시판</a><a class="b-arrow-box"></a></li>
+                        <li id="shop-records">
+                            <a class="first-depth-records">전체상품</a>
+                            <a class="b-arrow-box"></a>
+                            <ul class="second-depth-ul">
+                                <li><a href="/view/product/shop.html" class="second-depth-records">수채화용품</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">아크릴용품</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">유화용품</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">동양화용품/서예/캘리</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">색연필/연필/콘테/목탄</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">오일파스텔/파스텔/크레파스</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">포스터칼라/디자인</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">마카/라이너/스프레이</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">만화용품/타블렛</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">공예/ 핸드페인팅</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">조소/판화용품</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">지류/스케치북</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">캔버스/판넬</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">붓</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">아동문구/미술용품</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/view/board/faq.html" class="first-depth-records">고객센터</a><a class="b-arrow-box"></a></li>
+                        <li><a href="/view/board/event.html" class="first-depth-records">이벤트</a><a class="b-arrow-box"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <div id="mask"></div>
+        <div id="review-detail" class="hide-review-detail">
+            <div>
+                <div class="detail-first-container">
+                    <div class="review-detail-header">
+                        <div>
+                            <b>타이틀</b>
+                            <p>nickname</p>
+                        </div>
+                    </div>
+                    <div class="review-img-box">
+                        <img style="width: 100%;" src="/src/media/images/colorpencil.jpg"/>
+                    </div>
+                    <div id="review-post-area">
+                        <div>
+                            <span>
+                                <img height="18" src="/src/media/images/heart.png"/>
+                                <span style="font-size: 14px;">좋아요</span>
+                            </span>
+                            <span style="font-size: 14px; float: right;">이 리뷰를 12명이 공감합니다</span>
+                        </div>
+                        <p class="post-text">신한이 제일 발림성이 부드럽고 색 조합하기에도 좋은 것 같아요. 제일 저렴해서 쟁겨두고 쓰고 있어요</p>
+                    </div>
+                </div>
+                <div class="detail-second-container">
+                    <div id="detail-close-area">
+                        <div class="line-box">
+                          <span class="line-01"></span>
+                          <span class="line-02"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <img style="height: 34.5px;" src="/src/media/images/colorpencil.jpg"/>
+                        <div id="review-product">
+                            <p>까렌다쉬 루미넌스 6901 유성색연필</p>
+                            <p>관련 리뷰 : 12</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <span>
+                                    <embed class="star" src="/src/media/images/star.svg" type="image/svg+xml" aria-label="filled_star">
+                                    <embed class="star" src="/src/media/images/star.svg" type="image/svg+xml" aria-label="filled_star">
+                                    <embed class="star" src="/src/media/images/star.svg" type="image/svg+xml" aria-label="filled_star">
+                                    <embed class="star" src="/src/media/images/star.svg" type="image/svg+xml" aria-label="filled_star">
+                                    <embed class="star" src="/src/media/images/blankstar.svg" type="image/svg+xml" aria-label="filled_star">
+                                </span>
+                                <span class="review-date">
+                                    2022.05.05
+                                </span>
+                            </div>
+                            <p class="summary-score">
+                                좋아요
+                            </p>
+                        </div>
+                    </div>
+                    <div class="comment-area">
+                        <ul>
+                            <li>
+                                <div>
+                                    <b>nickname1</b>
+                                    <div>
+                                        프리즈마 색연필보다 더 부드러워서 자연스러운 선을 쓰기 좋네요
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <b>nickname1</b>
+                                    <div>
+                                        프리즈마 색연필보다 더 부드러워서 자연스러운 선을 쓰기 좋네요
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <b>nickname1</b>
+                                    <div>
+                                        프리즈마 색연필보다 더 부드러워서 자연스러운 선을 쓰기 좋네요
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <b>nickname1</b>
+                                    <div>
+                                        프리즈마 색연필보다 더 부드러워서 자연스러운 선을 쓰기 좋네요
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="comment-input-area">
+                        <textarea rows="1" placeholder="댓글을 작성해 주세요."></textarea>
+                        <button type="button">댓글 등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main id="main" class="main-container">
+            <div style="margin: auto; min-width: 320px; max-width: 974px;">
+                <div style="background-color: #767676; height: 103px; margin-bottom: 10px;"></div>
+                <div style="display: flex; justify-content: space-between;background-color: white; border: 1px solid #e5e5e5">
+                    <span style="font-size:13px;">
+                        <span>최신 순</span> |
+                        <span>댓글 순</span> |
+                        <span>좋아요 순</span>
+                    </span>
+                    <span>
+                        <select>
+                            <option>제목</option>
+                            <option>내용</option>
+                            <option>작성자</option>
+                        </select>
+                        <input type="text"/>
+                    </span>
+                    <!-- <button style="padding: 3px 10px; background-color: #f77068; color: white;">글쓰기</button> -->
+                </div>
+            </div>
+            <div id="review-main-area">
+                <ul class="review-container">
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="review-item" href="#">
+                            <div class="review-img-area">
+                                <img src="/src/media/images/colorpencil.jpg"/>
+                            </div>
+                            <div class="review-contents-wrap">
+                                <div class="review-contents">
+                                    정말 좋아요
+                                </div>
+                                <div class="review-reg">
+                                    <div class="nickname-sec">
+                                        sdd***
+                                    </div>
+                                    <div class="rec-date">
+                                      2022. 05. 18
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex; padding: 5px 0; margin: 12px 12px 9px 12px;align-items: center;
+                            justify-content: space-between; border-bottom: 1px solid #f3f3f3;">
+                                <div style="font-size: 12px;">댓글: 0</div>
+                                <div onclick="view_heart()">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#f77068"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="review-comments-area">
+                                <div class="bca">최신 댓글</div>
+                                <div class="comments-thumbnail">
+                                    <img src="/src/media/images/pencil.jpg"/>
+                                </div>
+                                <div class="comments-contents">
+                                    저도 연습용으로 샀는데 적당하게 잘 쓰고 있습니다. 조색하기도 좋습니다. 배송도 빠르구요
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="pagination-container">
+                <ul class="pagination-wrap">
+                    <li><a>&lt;</a></li>
+                    <li><a>1</a></li>
+                    <li><a>2</a></li>
+                    <li><a>3</a></li>
+                    <li><a>4</a></li>
+                    <li><a>5</a></li>
+                    <li><a>6</a></li>
+                    <li><a>7</a></li>
+                    <li><a>8</a></li>
+                    <li><a>9</a></li>
+                    <li><a>10</a></li>
+                    <li><a>&gt;</a></li>
+                </ul>
+            </div>
+        </main>
+        <footer id="footer">
+        </footer>
+        <!-- Footer -->
+    </div>
+</body>

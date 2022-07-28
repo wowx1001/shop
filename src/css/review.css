@@ -1,0 +1,351 @@
+#review-detail{
+    letter-spacing: -1px; 
+    position: fixed;
+    height:100%; 
+    width: 100%; 
+    background-color: #0000005c; 
+    top: 0; 
+    z-index: 9999;
+}
+#review-detail > div{
+    display:flex; 
+    justify-content: center; 
+    height: 100%; 
+    align-items: center;
+}
+.visible-review-detail{
+    visibility: visible;
+    opacity:1;
+    transition: visibility 0.2s ease-in, opacity 0.2s ease-in;
+}
+.hide-review-detail{
+    visibility: hidden;
+    opacity:0;
+    transition: visibility 0.2s ease-out, opacity 0.2s ease-out;
+}
+.star{
+    width: 20px;
+}
+
+.comment-area{
+    height:406px; 
+    overflow-y: scroll;
+}
+.comment-area ul{
+    padding: 0; 
+    font-size: 12px;
+}
+.comment-area ul li:not(:first-child){
+    margin-top: 12px;
+}
+
+/* 스크롤바 설정*/
+.comment-area::-webkit-scrollbar{
+    width: 6px;
+}
+
+/* 스크롤바 막대 설정*/
+.comment-area::-webkit-scrollbar-thumb{
+    height: 17%;
+    background-color: rgb(109, 109, 109);
+}
+
+/* 스크롤바 뒷 배경 설정*/
+.comment-area::-webkit-scrollbar-track{
+    background-color: rgba(0,0,0,0);
+}
+
+.comment-input-area textarea{
+    box-sizing: border-box; 
+    width: 100%; 
+    padding: 12px; 
+    border: solid 1px #d8dde5; 
+    border-radius: 4px; resize: none; 
+    overflow: hidden; 
+    background-color: #ffffff; 
+    text-overflow: ellipsis;
+    font-size: 11px;
+}
+
+.comment-input-area textarea:focus{
+    outline: 0;
+}
+
+.comment-input-area button{
+    width: 100%;
+    background-color: #f4a700;
+    color: white;
+    letter-spacing: -1px;
+    font-size: 12px;
+    padding: 12px;
+    border-radius: 4px;
+}
+.detail-first-container,.detail-second-container{
+    height: 744px;
+}
+.detail-first-container{
+    padding: 0 35px; 
+    background-color: white; 
+    width: 611px;
+}
+.detail-second-container{
+    border-left:1px solid #e3e3e3; 
+    background-color: white; 
+    width: 300px; 
+    padding: 0 17px;
+}
+.detail-second-container > div:nth-child(2){
+    margin-top: 50px;
+}
+.detail-second-container > div{padding: 15px;}
+
+.review-date{
+    float: right; 
+    font-size: 12px;
+}
+.summary-score{
+    margin: 9px 0 0 0; 
+    font-size:14px;
+}
+
+#review-product{
+    display: inline-block; vertical-align: middle;
+}
+#review-product p:first-child{
+    margin-bottom: 0; 
+    font-size: 13px;
+}
+#review-product p:last-child{
+    margin-bottom: 0; 
+    font-size: 10px;
+}
+.review-detail-header{
+    padding: 10px 0;
+}
+.review-detail-header > div{
+    padding: 13px 5px; 
+    border-bottom: 1px solid #e3e3e3; 
+    margin: 23px 0 0 0;
+}
+.review-detail-header > div > b{
+    font-size: 14px;
+}
+.review-detail-header > div > p{
+    margin: 0; 
+    font-size: 12px;
+}
+.review-img-box{
+    text-align: center; 
+    padding: 10px;
+}
+
+#review-post-area{
+    padding: 9px 0; 
+    border-top: 1px solid #e3e3e3;
+}
+.post-text{
+    margin-top:14px; 
+    font-size:12px; 
+    letter-spacing: -1px; 
+    word-break: keep-all;
+}
+#review-box{
+    padding: 0;
+}
+#review-box li{
+    width: 22.5%;
+    border: 1px solid #e5e5e5;
+    padding: 0;
+    margin: 0 10px 50px 10px;
+    box-shadow: 0 3px 3px #fafafa;
+    position: relative;
+    display: inline-block;
+}
+.review-header{
+    letter-spacing: -2px;
+    text-align: center;
+    font-family: 'Noto Sans KR Regular', sans-serif;
+}
+.review-container{
+    padding: 0;
+    margin: 0 auto;
+    width: 957px;
+}
+.review-container li{
+    width: 215px;
+    border: 1px solid #e5e5e5;
+    padding: 0;
+    margin: 0 10px 50px 10px;
+    box-shadow: 0 3px 3px #fafafa;
+    display: inline-block;
+}
+.review-container li:hover{
+    transform: translate(-3px,-3px);
+    transition: 0.2s;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%), 0 2px 2px rgb(0 0 0 / 5%), 0 4px 4px rgb(0 0 0 / 5%), 0 6px 8px rgb(0 0 0 / 5%), 0 8px 16px rgb(0 0 0 / 5%);
+}
+.review-img-area{
+    padding:15px;
+}
+.review-img-area img{
+    width: 100%;
+}
+.review-contents-wrap{
+    padding: 12px 2px 15px 2px;
+    margin: 0 10px;
+    border-bottom: 1px solid #f3f3f3;
+}
+.review-contents{
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 5px;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.review-reg{
+    position: relative; 
+    font-size: 11px;
+}
+.nickname-sec{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin:0;
+}
+.rec-date{
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 70px;
+    padding-right: 2px;
+    display: block;
+    text-align: right;
+    color: #767676;
+}
+.review-comments-area{
+    padding: 12px 2px 15px 2px;
+}
+.bca{
+    font-size: 11px;
+    margin: 0px 10px 10px 10px;
+}
+.comments-thumbnail{
+    margin:0 10px;
+}
+.comments-thumbnail img{
+    float: left;
+    width: 33px; 
+    box-shadow: 0 3px 3px #fafafa;
+    height: 33px; 
+    border: 1px solid #e5e5e5; 
+    margin-right: 7px;
+}
+.comments-contents{
+    font-size: 11px; 
+    margin:0 10px;
+    height: 33px; 
+    overflow: hidden; 
+    text-overflow:ellipsis;
+}
+
+#detail-close-area {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    top: 14px;
+    float: right;
+}
+
+#detail-close-area .line-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+#detail-close-area .line-box:hover{
+    cursor: pointer;
+}
+#detail-close-area .line-box > span {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+
+#detail-close-area .line-01 {
+    transform: rotate(135deg) translateX(0%);
+}
+
+#detail-close-area .line-02 {
+    transform: rotate(45deg) translateX(0%);
+}
+.pagination-container{
+    display: flex;
+    margin: 64px;
+    justify-content: center;
+}
+.pagination-wrap li{
+    float: left;
+    border: 1px solid #eee;
+    padding: 5px 10px;
+}
+.pagination-wrap li:not(:last-child){
+    margin-right: 7px;
+}
+
+/* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/ 
+@media all and (max-width:1023px) { 
+    .review-container{
+        width: 720px;
+    }
+} 
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 908px)*/ 
+@media all and (max-width:908px) {
+    .comment-area {
+        height: 376px;
+        overflow-y: scroll;
+    }
+} 
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (max-width:767px) {
+    #review-detail > div {
+        flex-direction: column;
+    }
+    .review-container{
+        width: 476px;
+    }
+    .detail-first-container,.detail-second-container{
+        width: 100%;
+        height: 100%;
+    }
+    .detail-second-container{
+        padding: 0 17px 50px 17px;
+    }
+    #detail-close-area {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+    }
+    .comment-area{
+        height: 186px;
+    }
+} 
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+    .review-container{
+        width: 235px;
+    }
+    .comment-area{
+        height: 58px;
+    }
+    .detail-second-container > div:nth-child(2){
+        margin-top: 0;
+    }
+}
+  

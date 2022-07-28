@@ -1,0 +1,54 @@
+.join-container{
+    width: 460px; 
+    margin: 200px auto;
+    padding: 200px 0;
+}
+#join-form, .input-wrapper{
+    position: relative;
+}
+#join-form button{
+    width: 100%; 
+    margin: 3rem 0 0; 
+    padding: 1rem;
+    background-color: #f3783d;
+    color: white;
+    letter-spacing: -1px;
+    font-family: 'Noto Sans KR Light', sans-serif;
+    border-radius: 4px;
+    font-weight: 600;
+}
+#join-form button.non-color{
+    background-color: #e0e0e0;
+}
+.input-wrapper{
+    margin-bottom: 30px;
+}
+
+.input-wrapper span{
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    letter-spacing: -1.2px;
+    color: #bdbdbd;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+}
+.input-wrapper input{
+    color: #495055;
+    width: 100%;
+    padding: 15px 15px;
+    border-radius: 4px;
+    border: 1px solid #e1e3e3;
+}
+
+.input-wrapper input:focus, .input-wrapper input:valid{
+    border: 1px solid #f3783d;
+}
+.input-wrapper input:valid + .input-placeholder,
+.input-wrapper input:focus + .input-placeholder{
+    top: -10px;
+    transform: scale(0.8);
+    background-color: white;
+    color: #f3783d;
+    font-weight: 600;
+}

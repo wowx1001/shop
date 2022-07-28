@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0b71acbec7.js" crossorigin="anonymous"></script>
+    <script src="/src/js/App.js" type="module"></script>
+    <script src="/src/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/src/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>로그인</title>
+</head>
+<body>
+    <div class="body-container" id="app">
+        <header id="header">
+            <!-- header 컴포넌트 로딩 -->
+        </header>
+        <aside class="accordion-menu close-accordion">
+            <div class="close"></div>
+            <div style="padding-left: 12px;">
+                <a href="/view/member/login.html">로그인이 필요합니다</a>
+            </div>
+            <div>
+                <ul style="padding: 0;text-align: center; margin: 19px 0;">
+                    <li class="clearfix" style="line-height: 32px;width:24%; display: inline-block;"><a href="/view/member/join.html"><div><img src="/src/media/images/cart.png" style="margin:auto;width: 30px;"/><p style="font-size: 12px; margin:0;">회원가입</p></div></a></li>
+                    <li class="clearfix" style="line-height: 32px;width:24%; display: inline-block;"><a href="#"><div><img src="/src/media/images/cart.png" style="margin:auto;width: 30px;"/><p style="font-size: 12px; margin:0;">장바구니</p></div></a></li>
+                    <li class="clearfix" style="line-height: 32px;width:24%; display: inline-block;"><a href="#"><div><img src="/src/media/images/cart.png" style="margin:auto;width: 30px;"/><p style="font-size: 12px; margin:0;">주문조회</p></div></a></li>
+                    <li class="clearfix" style="line-height: 32px;width:24%; display: inline-block;"><a href="#"><div><img src="/src/media/images/cart.png" style="margin:auto;width: 30px;"/><p style="font-size: 12px; margin:0;">배송조회</p></div></a></li>
+                </ul>
+            </div>
+            <div>
+                <div>
+                    <ul class="first-depth-ul">
+                        <li><a href="/view/member/join.html" class="first-depth-records">마이페이지</a><a class="b-arrow-box"></a></li>
+                        <li><a href="/view/board/notify.html" class="first-depth-records">공지사항</a><a class="b-arrow-box"></a></li>
+                        <li><a href="/view/board/review.html" class="first-depth-records">리뷰게시판</a><a class="b-arrow-box"></a></li>
+                        <li id="shop-records">
+                            <a class="first-depth-records">전체상품</a>
+                            <a class="b-arrow-box"></a>
+                            <ul class="second-depth-ul">
+                                <li><a href="/view/product/shop.html" class="second-depth-records">수채화용품</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">아크릴용품</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">유화용품</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">동양화용품/서예/캘리</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">색연필/연필/콘테/목탄</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">오일파스텔/파스텔/크레파스</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">포스터칼라/디자인</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">마카/라이너/스프레이</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">만화용품/타블렛</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">공예/ 핸드페인팅</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">조소/판화용품</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">지류/스케치북</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">캔버스/판넬</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">붓</a></li>
+                                <li><a href="/view/product/shop.html" class="second-depth-records">아동문구/미술용품</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/view/board/faq.html" class="first-depth-records">고객센터</a><a class="b-arrow-box"></a></li>
+                        <li><a href="/view/board/event.html" class="first-depth-records">이벤트</a><a class="b-arrow-box"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <div id="mask"></div>
+        <main>
+            <div id="form-container">
+                <div class="logo-area"><a href="/">LOGO</a></div>
+                <form id="login-form">
+                    <div class="input-wrapper">
+                        <div id="id-area">
+                            <input type="text" id="id-input" name="id" value="" required >
+                            <span class="input-placeholder">아이디</span>
+                        </div>
+                        <div id="pw-area">
+                            <input type="password" id="passwd-input" name="passwd" value="" required >
+                            <span class="input-placeholder">비밀번호</span>
+                        </div>
+                        <button onclick="javascript:location.href='/'" type="button" class="login-btn">로그인</button>
+                    </div>
+                    <div class="find-container">
+                        <p class="find-wrapper">
+                            <a>아이디</a>/
+                            <a>비밀번호 찾기</a> |
+                            <a href="./join.html">회원가입</a>
+                        </p>
+                    </div>
+                    <div style="text-align: center; font-size: 12px;">
+                        <p>간편 로그인&가입</p>
+                        <ul class="easy-signup">
+                            <li style="background-color: #03c75a;">
+                                <img src="/src/media/images/btnG_아이콘사각.png"/>
+                                <span>네이버 로그인</span>
+                            </li>
+                            <li style="background-color: #fee500;">
+                                <img src="/src/media/images/kakaolink_btn_medium.png"/>
+                                <span style="color: #181600;">카카오 로그인</span>
+                            </li>
+                            <li style="background-color: white; border: 1px solid #e3e3e3;">
+                                <img src="/src/media/images/google_login.png"/>
+                                <span style="color: black;">구글 로그인</span>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer id="footer">
+        </footer>
+        <!-- Footer -->
+    </div>
+</body>
+</html>

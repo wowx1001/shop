@@ -1,0 +1,218 @@
+@font-face {
+  font-family: 'Noto Sans KR';
+  src:url('/src/media/fonts/NotoSansKR-Black.otf')
+} 
+@font-face {
+  font-family: 'Noto Sans KR Regular';
+  src:url('/src/media/fonts/NotoSansKR-Regular.otf')
+} 
+@font-face {
+  font-family: 'Noto Sans KR Light';
+  src:url('/src/media/fonts/NotoSansKR-Light.otf')
+} 
+@font-face {
+  font-family: 'Noto Sans KR Thin';
+  src:url('/src/media/fonts/NotoSansKR-Thin.otf')
+} 
+*{
+  box-sizing: border-box;
+}
+html, body{
+  padding: 0;
+  margin: 0;
+}
+html a{
+  text-decoration: none !important;
+  color: black !important;
+  display: inline-block;
+  cursor: pointer;
+}
+a:hover{
+  color: black;
+}
+ul, ol{
+  list-style: none;
+}
+ul,li,ol,div,span,a{
+  margin:0;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+.body-container{
+  position:static;
+}
+.body-passive{
+  position:fixed;
+}
+.move-container{
+  transform: translate(350px,0);
+  transition:400ms;
+}
+.navbar-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1296px;
+}
+.navbar-on{
+  overflow: visible;
+}
+.navbar{
+  padding: 0 !important;
+  height: 4rem;
+  overflow: hidden;
+}
+header, .navbar, .navbar-wrapper{
+  text-align: center;
+}
+header{
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  -webkit-transition: top .2s ease-in-out;
+  transition: top .2s ease-in-out;
+  box-shadow: 0 2px 5px -1px rgb(0 0 0 / 20%);
+  z-index: 9999;
+  letter-spacing: -1px;
+  font-family: 'Noto Sans KR Light', sans-serif; 
+  text-decoration: none; 
+  color: black;
+}
+.header-off{
+  top:-182px;
+}
+.navbar-ul{
+  list-style: none;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 0;
+}
+
+.navbar-ul > .nav-item{
+  padding: 1rem;
+  line-height: 2rem;
+}
+.nav-item{
+  float: left;
+}
+.dropdown-wrap{
+  padding: 0;
+  margin-top: 1rem;
+  background-color: white;
+  width: 100%;
+}
+.dropdown-area, .dropdown-items{
+  list-style: none;
+  text-align: center;
+}
+.dropdown-area>.nav-item:not(:last-child){
+  margin-right: 1rem;
+}
+.dropdown-items{
+  padding-left: 0;
+}
+
+.item2{
+  margin-left: 112px;
+}
+button{
+  border:none;
+  background-color: white;
+  cursor: pointer;
+}
+.section-wrap{
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.img-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  height: 580px;
+  margin: 0 auto;
+}
+.img-wrap{
+  display: flex;
+  flex-direction: row;
+}
+.img-item{
+  display: flex;
+  margin-bottom: 1rem;
+}
+.img-res1{
+  flex:1.3;
+  margin-right: 1rem;
+  height: 267px;
+  background-image: url("/src/media/images/colorpencil.jpg");
+  background-size: cover;
+}
+.img-res2{
+  flex:1;
+  height: 267px;
+  background-image: url("/src/media/images/pencil.jpg");
+  background-size: cover;
+}
+.img-res3{
+  flex:1;
+  margin-right: 1rem;
+  height: 267px;
+  background-image: url("/src/media/images/paint.jpg");
+  background-size: cover;
+}
+.img-res4{
+  flex:1.3;
+  height: 267px;
+  background-image: url("/src/media/images/sketchbook.jpg");
+  background-size: cover;
+}
+.main-container{
+  margin-top: 182px;
+}
+video{
+  width: 100%;height: calc(70vh - 88px);object-fit: cover;
+}
+
+@keyframes play {
+  0%{background-position: 0px;}
+  100%{
+    background-position: -3072px;
+    display: none;
+  }
+}
+
+.likes{
+  width: 128px;
+  height: 128px;
+  background: url("/src/media/images/heart1.png") left center;
+  background-size: auto 128px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  animation: play 0.5s steps(24) 1;
+}
+
+/* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/ 
+@media all and (max-width:1023px) { 
+
+} 
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (max-width:767px) {
+
+} 
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+    video{
+      height: calc(100vh - 88px);
+    }
+}
+  

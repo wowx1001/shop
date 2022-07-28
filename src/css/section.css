@@ -1,0 +1,247 @@
+.video-text-wrap{
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -4px;
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    background-color: #00000042;
+    width:100%;
+    height: calc(70vh - 88px);
+}
+.video-text-area{
+    padding: 0 20%;
+    position: absolute;
+    bottom: 116px;
+    text-shadow: 4px 4px rgb(0 0 0 / 70%);
+    z-index: 999;
+}
+.video-text-area button{
+    margin-top: 1.7rem;
+}
+
+.promotion-sec{
+    height: 730px; 
+    width: 100%; 
+    margin: 98px 0; 
+    text-align: center;
+}
+
+.promotion-sec h3{
+    letter-spacing: -2px;
+    text-align: center;
+    font-family: 'Noto Sans KR Regular', sans-serif;
+}
+.promotion-category{
+    margin-top: 1rem;
+    padding: 0;
+}
+.promotion-category li{
+    display: inline-block;
+    letter-spacing: -1.2px;
+}
+.promotion-category li:not(:first-child){
+    margin-left: 20px;
+}
+.wise-saying-sec{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 371px;
+    background: url('/src/media/images/starry-night.jpg') fixed no-repeat;
+    background-size: 100% 100%;
+}
+.wise-saying-wrap{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Noto Sans KR Light';
+    font-size: 1.2rem;
+    letter-spacing: -1.7px;
+    font-weight: 700;
+    height: 100%;
+    text-align: center;
+}
+.exhibition-title{
+    letter-spacing: -2px;
+    font-family: 'Noto Sans KR Regular', sans-serif;
+}
+.part03{
+    width: 100%; 
+    height: 217px; 
+    background-color:#ffd200; 
+    text-align: center;
+}
+.part03 div{
+    width: 100%;
+    height: 100%;
+    background: url('/src/media/images/webbanner.jpg') no-repeat center center;
+    background-size: auto 100%;
+}
+.part-sec{
+    margin: 120px 0;
+}
+
+.products-sec{
+    margin: 3rem 0; 
+    text-align: center;
+}
+.products-h2{
+    letter-spacing: -2px;
+    text-align: center;
+    font-family: 'Noto Sans KR Regular', sans-serif;
+}
+.sort-list{
+    padding:0; 
+    margin: 2rem 0; 
+    height: 38px; 
+    text-align: center;
+}
+.sort-list li{
+    display: inline-block;
+}
+.sort-list li button{
+    width: 117.25px;
+}
+.sort-list li:not(:last-child){margin-right: 2rem;}
+.products-list-contents{
+    margin-top: 2rem; 
+    padding:0;
+    width: 100%;
+    font-size: 11px;
+}
+.likes-area{
+    font-size: 13px;
+}
+.products-name{word-break: keep-all;}
+.pd-list-items{
+    float:left; 
+    width: 25%;
+}
+.pd-list-items>img {
+    width: 100%;
+}
+.fnq-title{
+    letter-spacing: -2px;
+    text-align: center;
+    font-family: 'Noto Sans KR Regular', sans-serif;
+}
+.fnq-block{
+    text-align: center; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
+.fnq-first{
+    flex-basis: 100% !important;
+}
+.fnq-block-contents{
+    margin: 5px 5px; 
+    display:flex; 
+    flex-direction:column; 
+    justify-content: center; 
+    padding: 3rem; 
+    background-color:rgba(0,23,51,0.02); 
+    flex-basis: calc(33% - 8px);
+}
+.fnq-second{
+    max-width: calc(33% - 9px);
+}
+
+.slider{
+    width: 500px;
+    margin: 0 auto;
+}
+.slider img{
+    width: 500px; left: 0;
+}
+
+.exhibition-title{
+    text-align: center;
+}
+
+/* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/ 
+@media all and (max-width:1023px) { 
+    .wise-saying-sec{
+        background-size: auto 100%;
+    }
+} 
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (max-width:767px) {
+    .slider{
+        width: 500px;
+        margin: 0 auto;
+    }
+    .slider img{
+        width: 500px; left: 0;
+    }
+    .part03 div{
+        background-size: 100% auto;
+    }
+    .wise-saying-wrap{
+        font-size: 1rem;
+    }
+} 
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+    .products-list-contents{
+        padding:32px;
+    }
+    .video-text-area{
+        font-size: 1.75rem;
+        bottom: 300px;
+    }
+    .main-container{
+        width: 100%;
+    }
+    .sort-list li:not(:last-child) {
+        margin-right: 1rem;
+    }
+    .sort-list li button {
+        width: 90.25px;
+        font-size: 11px;
+    }
+    .pd-list-items{
+        width: auto;
+    }
+    .pd-list-items>img{
+        width: 90%;
+    }
+    .wise-saying-sec{
+        height: 291px;
+    }
+    .wise-saying-wrap{
+        padding: 0;
+    }
+    .wise-saying-wrap > p{
+        margin-bottom: 0;
+    }
+    .exhibition-title h4{
+        margin-bottom: 27px;
+    }
+    .slider{
+        width: 100%; left: 0;
+    }
+    .slider img{
+        width: 100vw; left: 0;
+    }
+    .part06-sec02{
+        height: auto;
+    }
+    .part-sec{
+        margin: 48px 15px;
+    }
+    .fnq-block-contents{
+        margin: 4px 4px;
+        padding: 25px 13px;
+        word-break: keep-all;
+        font-size: 13px;
+        letter-spacing: -1.7px;
+    }
+    .video-text-wrap{
+        height: calc(100vh - 88px);
+    }
+}
+  

@@ -1,0 +1,144 @@
+#shop{
+    padding: 0;
+    margin: 0 auto;
+    width: 977px;
+}
+#shop li{
+    width: 24.5%;
+    text-align: center;
+    display: inline-block;
+}
+.category-items{
+    padding:8px; 
+    width:160px; 
+    border:1px solid #e9e9e9;
+    cursor:pointer;
+    margin: 3px;
+}
+
+main{
+    margin-top: 182px; 
+}
+
+.pc-category-container{
+    width: 276px;
+}
+.pc-category-ul{
+    margin:0; 
+    padding:0; 
+    display: flex; 
+    flex-wrap: wrap; 
+    font-size: 13px; 
+    letter-spacing: -1.5px;
+    font-family: 'Noto Sans KR Regular', sans-serif; 
+    text-align:center; 
+    justify-content: center;
+}
+.shop-area{
+    min-width: 320px;
+    max-width: 977px;
+}
+.search-wrap{
+    width:100%; 
+    height: 103px; 
+    padding: 0 6rem; 
+    background: #e9e9e9;
+}
+.item-search{
+    width: 100%; 
+    margin: 1rem 0; 
+    position: relative; 
+    bottom: -28px; 
+    border: 1px solid #e6e6e6; 
+    padding: 0.4rem;
+}
+.common-category-ul{
+    margin:0; 
+    padding: 1rem 0; 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    font-size: 13px; 
+    letter-spacing: -1.5px;
+    font-family: 'Noto Sans KR Regular', sans-serif; text-align:center;
+}
+.pagination-container{
+    display: flex;
+    margin: 64px;
+    width: 100%;
+    justify-content: center;
+}
+.pagination-wrap li{
+    float: left;
+    border: 1px solid #eee;
+    padding: 5px 10px;
+}
+.pagination-wrap li:not(:last-child){
+    margin-right: 7px;
+}
+#common-cg-open{
+    display: none;
+}
+
+/* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/ 
+@media all and (max-width:1269px) { 
+    .pc-category-ul{
+        display: none;
+    }
+} 
+@media all and (max-width:993px) { 
+    #shop{
+        width: 768px;
+    }
+    #shop li{
+        width: 32.5%;
+    }
+} 
+
+@media all and (max-width:908px) {
+    main{
+        margin-top: 64px; 
+    }
+    #common-cg-open{
+        display: inline-block;
+    }
+    #common-cg-open, .category-items{
+        width:100%; 
+    }
+    #common-cg-open, .common-tables{
+        margin: -1px 0 0 0;
+        position: relative;
+    }
+    .ci-passive{
+        display: none;
+    }
+    .ci-active{
+        display: block;
+    }
+} 
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (max-width:767px) {
+    #shop{
+        width: 100%;
+    }
+} 
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+    #shop li{
+        width: 100%;
+    }
+    .item-text{
+        width: 80%;
+        margin: auto;
+    }
+    .pagination-container{
+        margin: 13px;
+    }
+    .pagination-wrap{
+        font-size: 12px;
+        padding: 0;
+    }
+}
+  
