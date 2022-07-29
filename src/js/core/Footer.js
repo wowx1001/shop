@@ -1,4 +1,4 @@
-import Component from "/src/js/components/Components.js";
+import Component from "/shop/src/js/components/Components.js";
 
 export default class Header extends Component {
 //   setup () {

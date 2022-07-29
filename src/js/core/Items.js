@@ -1,5 +1,5 @@
-import Component from "/src/js/components/Components.js";
-import products from "/src/products.json" assert { type: "json" };
+import Component from "/shop/src/js/components/Components.js";
+import products from "/shop/src/products.json" assert { type: "json" };
 
 export default class Items extends Component {
   setup () {
@@ -33,7 +33,7 @@ export default class Items extends Component {
                     <del>${item.sale_price}원</del>
                     <p>${item.cur_price}원</p>
                 </div>
-                <p style="font-size: 13px;"><img src="/src/media/images/likes-sm.png"/>123</p>
+                <p style="font-size: 13px;"><img src="/shop/src/media/images/likes-sm.png"/>123</p>
             </div>
         </a>
         </li>`).join('')}

@@ -1,6 +1,6 @@
-import Items from "/src/js/core/Items.js";
-import Header from "/src/js/core/Header.js";
-import Footer from "/src/js/core/Footer.js"
+import Items from "/shop/src/js/core/Items.js";
+import Header from "/shop/src/js/core/Header.js";
+import Footer from "/shop/src/js/core/Footer.js"
 
 class App {
     constructor() {

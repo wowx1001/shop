@@ -1,5 +1,5 @@
-import Component from "/src/js/components/Components.js";
-import "/src/js/effect/effect.js";
+import Component from "/shop/src/js/components/Components.js";
+import "/shop/src/js/effect/effect.js";
 
 export default class Header extends Component {
   template () {
@@ -11,8 +11,8 @@ export default class Header extends Component {
                     <li><a href="#">모바일 버전</a></li>
                 </ul>
                 <ul class="top-ul top-right">
-                    <li><a href="/view/member/login.html">로그인</a></li>
-                    <li><a href="/view/member/join.html">회원가입</a></li>
+                    <li><a href="/shop/view/member/login.html">로그인</a></li>
+                    <li><a href="/shop/view/member/join.html">회원가입</a></li>
                     <li><a href="#">내정보</a></li>
                     <li><a href="#">장바구니</a></li>
                 </ul>
@@ -38,35 +38,35 @@ export default class Header extends Component {
                         </ul>
                     </div>
                     <button class="search-icon-box">
-                        <img src="/src/media/images/search.png">
+                        <img src="/shop/src/media/images/search.png">
                     </button>
                 </div>
                 <div class="top-image-box clearfix">
-                    <img src="/src/media/images/yisel.jpg"/>
+                    <img src="/shop/src/media/images/yisel.jpg"/>
                 </div>
             </div>
         </div>
         <div class="navbar-wrapper">
             <!-- <nav class="navbar-on"> -->
             <nav class="navbar">
-                <a href="#" class="burger-menu"><img width="30" src="/src/media/images/burger.png"/></a>
+                <a href="#" class="burger-menu"><img width="30" src="/shop/src/media/images/burger.png"/></a>
                 <a id="logo" href="/">LOGO AREA</a>
                 <ul class="navbar-ul navbar-left-contents">
                     <li class="nav-item item1"><a href="/">Logo</a></li>
                     <li class="nav-item item2">
                     <ul class="dropdown-area">
-                        <li class="nav-item"><a href="/view/board/notify.html">공지사항</a></li>
-                        <li class="nav-item"><a href="/view/product/shop.html">전체상품</a></li>
-                        <li class="nav-item"><a href="/view/board/faq.html">고객센터</a></li>
+                        <li class="nav-item"><a href="/shop/view/board/notify.html">공지사항</a></li>
+                        <li class="nav-item"><a href="/shop/view/product/shop.html">전체상품</a></li>
+                        <li class="nav-item"><a href="/shop/view/board/faq.html">고객센터</a></li>
                         <li class="nav-item"><a>이벤트</a></li>
-                        <li class="nav-item"><a href="/view/board/review.html">리뷰게시판</a></li>
+                        <li class="nav-item"><a href="/shop/view/board/review.html">리뷰게시판</a></li>
                     </ul>
                     </li>
                 </ul>
             </nav>
             <!-- div class="navbar-right-contents" style="cursor: pointer; z-index: 10000;">
                 <button class="serach"><i class="fa fa-search fa-lg"></i></button>
-                <button class="users" onclick="location.href='/view/member/login.html'"><i class="fa fa-solid fa-user fa-lg"></i></button>
+                <button class="users" onclick="location.href='/shop/view/member/login.html'"><i class="fa fa-solid fa-user fa-lg"></i></button>
             </div -->
         </div>
     `
