@@ -7,7 +7,7 @@ export default class Header extends Component {
         <div class="top-container">
             <div class="top-ul-wrapper">
                 <ul class="top-ul top-left">
-                    <li><a href="/">홈으로</a></li>
+                    <li><a href="/shop">홈으로</a></li>
                     <li><a href="#">모바일 버전</a></li>
                 </ul>
                 <ul class="top-ul top-right">
@@ -50,9 +50,9 @@ export default class Header extends Component {
             <!-- <nav class="navbar-on"> -->
             <nav class="navbar">
                 <a href="#" class="burger-menu"><img width="30" src="/shop/src/media/images/burger.png"/></a>
-                <a id="logo" href="/">LOGO AREA</a>
+                <a id="logo" href="/shop">LOGO AREA</a>
                 <ul class="navbar-ul navbar-left-contents">
-                    <li class="nav-item item1"><a href="/">Logo</a></li>
+                    <li class="nav-item item1"><a href="/shop">Logo</a></li>
                     <li class="nav-item item2">
                     <ul class="dropdown-area">
                         <li class="nav-item"><a href="/shop/view/board/notify.html">공지사항</a></li>
