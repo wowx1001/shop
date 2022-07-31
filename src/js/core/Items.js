@@ -1,11 +1,11 @@
 import Component from "/shop/src/js/components/Components.js";
-import products from "/shop/src/products.json" assert { type: "json" };
+import products from "/shop/src/products.js";
 
 export default class Items extends Component {
   setup () {
       this.setState({
-        items: products.data.main_category, 
-        index: Object.keys(products.data.main_category),
+        items: products.products.data.main_category, 
+        index: Object.keys(products.products.data.main_category),
         sc: this.get_scategory(),
         ci: this.get_cidx(),
         pd: this.get_pd()
