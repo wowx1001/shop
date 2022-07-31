@@ -1,6 +1,6 @@
 import Component from "/shop/src/js/components/Components.js";
 
-export default class Header extends Component {
+export default class Footer extends Component {
 //   setup () {
 //     this.$state = { items: ['item1', 'item2'] };
 //   }
